@@ -11,12 +11,10 @@
             if($status == PHP_SESSION_DISABLED) {
                 throw new \LogicException('Sessions are disabled.');
             }
-    
-            if($status == PHP_SESSION_NONE) {
+                if($status == PHP_SESSION_NONE) {
                 session_start();
                 $this->id=session_id();
             }
-    
         }
     
         /**

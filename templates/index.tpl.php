@@ -5,9 +5,10 @@
     <h1 class="cover-heading">Todo task list</h1>
     <p class="lead">Put your rules!</p>
     <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary">More</a>
+      <a href="dashboard" class="btn btn-lg btn-secondary">More</a>
     </p>
   </main>
+ 
 <?php
 
     include 'footer.tpl.php';

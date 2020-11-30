@@ -12,10 +12,15 @@
             parent::__construct($request,$session);
         }
        
+        //url = user/login
         function login(){
             $this->render(null,'login');
         }
-
+        function dashboard(){
+            $user=$this->session->get('user');
+            $data=$this->getDB()->selectAllWithJoin('tasks','users',['tasks.description','tasks.due_date'],'user','id');
+            $this->render(['user'=>$user,'data'=>$data],'dashboard');
+        }
         function log(){
             if (isset($_POST['email'])&&!empty($_POST['email'])
             &&isset($_POST['passw'])&&!empty($_POST['passw']))
@@ -26,7 +31,7 @@
            
                 $user=$this->auth($email,$pass);
                 if ($user){
-                    $_SESSION['user']=$user;
+                    $this->session->set('user',$user);
                     //si usuari valid
                     if(isset($_POST['remember-me'])&&($_POST['remember-me']=='on'||$_POST['remember-me']=='1' )&& !isset($_COOKIE['remember'])){
                         $hour = time()+3600 *24 * 30;
@@ -35,10 +40,10 @@
                         setcookie('email', $user['email'], $hour,$path);
                         setcookie('active', 1, $hour,$path);          
                     }
-                    header('Location:user/dashboard');
+                    header('Location:/user/dashboard');
                 }
                 else{
-                    header('Location:user/login');
+                    header('Location:/user/login');
                 }
             
             }

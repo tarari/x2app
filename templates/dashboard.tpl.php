@@ -1,5 +1,5 @@
 <?php
-    include 'src/templates/header.tpl.php';
+    include 'header.tpl.php';
     ?>
     <main>
     <section>
@@ -46,5 +46,5 @@
     </main>
     
 <?php
-    include 'src/templates/footer.tpl.php';
+    include 'footer.tpl.php';
     ?>

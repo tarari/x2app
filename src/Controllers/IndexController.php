@@ -10,6 +10,7 @@
         public function __construct(Request $request,Session $session){
             parent::__construct($request,$session);
         }
+        
         public function index(){
             $db=$this->getDB();
             $data=$db->selectAll('users');
