@@ -5,7 +5,7 @@
     class Request{
         private string $controller;
         private string $action;
-        //http method
+    
         private string $method;
         private array $params;
 
