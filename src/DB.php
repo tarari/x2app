@@ -89,7 +89,7 @@
                 return $rows;
             }
     
-            function selectAllWithJoin($db,$table1,$table2,array $fields=null,string $join1,string $join2):array
+            function selectAllWithJoin($table1,$table2,array $fields=null,string $join1,string $join2):array
             {
                 if (is_array($fields)){
                     $columns=implode(',',$fields);

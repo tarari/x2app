@@ -1,9 +1,11 @@
 <?php
 
-    include 'header.tpl.php';
+    include 'src/templates/header.tpl.php';
     ?>
+
     <main>
-    <form class="form" method="POST" action="user/log">
+   
+    <form class="form" method="POST" action="?url=logaction">
         <p>Sign in please...</p>
         <div class="form-row">
         <input type="text" name="email" placeholder="email" value="<?php 
@@ -28,5 +30,5 @@
     </main>
 
     <?php
-    include 'footer.tpl.php';
+    include 'src/templates/footer.tpl.php';
     ?>

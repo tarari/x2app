@@ -1,6 +1,8 @@
+<div class="message"><p></p></div>
+<script src="public/js/app.js"></script>
 <footer class="mastfoot mt-auto">
     <div class="inner">
-      <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <h6>&copy; Toni 2020</h6>
     </div>
   </footer>
 </div>
