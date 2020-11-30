@@ -3,11 +3,11 @@
     namespace App;
 
     class Request{
-        private String $controller;
-        private  String $action;
+        private  $controller;
+        private   $action;
     
-        private String $method;
-        private Array $params;
+        private $method;
+        private  $params;
 
         protected $arrURI;
 
