@@ -1,10 +1,10 @@
 <?php
-    include  'src/templates/header.tpl.php';
+    include  'header.tpl.php';
 
     ?>
     <main>
-        
-    <form class="form" method="POST" action="?url=newtaskaction">
+    <div class="container">    
+    <form class="form" method="POST" action="/task/add">
     <legend>
         <p>Fill data please...</p>
         <div class="form-row">
@@ -23,8 +23,9 @@
         
     </legend>
     </form>
+    </div>
     </main>
 
     <?php
 
-        include 'src/templates/footer.tpl.php';
+        include 'footer.tpl.php';
