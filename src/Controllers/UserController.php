@@ -16,11 +16,17 @@
         function login(){
             $this->render(null,'login');
         }
+        function logout(){
+            session_destroy();
+            header('Location:/');
+        }
         function dashboard(){
+            
             $user=$this->session->get('user');
-            $data=$this->getDB()->selectAllWithJoin('tasks','users',['tasks.description','tasks.due_date'],'user','id');
+            $data=$this->getDB()->selectAllWithJoin('tasks','users',['tasks.id','tasks.description','tasks.due_date'],'user','id');
             $this->render(['user'=>$user,'data'=>$data],'dashboard');
         }
+
         function log(){
             if (isset($_POST['email'])&&!empty($_POST['email'])
             &&isset($_POST['passw'])&&!empty($_POST['passw']))
