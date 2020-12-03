@@ -10,6 +10,7 @@ namespace App;
         static protected $req;
 
         public static function run(){
+
             $session=new Session();
             $routes=self::getRoutes();
             
@@ -18,6 +19,8 @@ namespace App;
             // url friendly :  http://app/controlador/accion/param1/valor1/param2/valor2
             self::$req=new Request;
             $controller=self::$req->getController();
+            
+        
             self::$action=self::$req->getAction();
             self::dispatch($controller,$routes,$session);
 

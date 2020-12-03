@@ -4,10 +4,13 @@
    
 
     require __DIR__.'/vendor/autoload.php';
-
+    define('BASE',
+    (dirname($_SERVER['SCRIPT_NAME'])).'/');
+    
     use App\App;
-    // cargar entorno de configuracion
+   
    // App::init();
+   
 
     App::run();
     

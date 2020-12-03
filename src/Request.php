@@ -15,11 +15,42 @@
             $requestString=\htmlentities($_SERVER['REQUEST_URI']);
             //extract URI
             $this->arrURI=explode('/',$requestString);
+            
             array_shift($this->arrURI);
             $this->extractURI();
         }
-
+        private function adaptFolder(){
+            $base=explode('/',BASE);
+           
+            
+            $arr=null;
+            foreach($base as $item){
+                if($item!=""){
+                    $arr[]=$item;
+                }
+            }
+            if($arr!=null){
+                $imp=null;
+            
+                foreach($this->arrURI as $item){
+                    foreach($arr as $pin){
+                        if($item!=$pin){
+                            $imp[]=$item;
+                        }
+                    }
+                }
+            }else{
+                $imp=$this->arrURI;
+            }if($imp==null){
+                $imp[]="";
+            }
+            //$imp es arrayURI mejorado
+            return $imp;
+        }
         private function extractURI():void{
+            
+            $this->arrURI=$this->adaptFolder();
+           
             $length=count($this->arrURI);
             
             switch($length){
