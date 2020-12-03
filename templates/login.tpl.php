@@ -8,7 +8,7 @@
     <div class="card">
     <div class="card-header">Sign in:</div>
     <div class="card-body"></div>
-    <form class="form" method="POST" action="<? BASE;?>user/log">  
+    <form class="form" method="POST" action="<?= BASE;?>user/log">  
         <div class="input-group form-group">
         <label for="email">Email:
             <input type="text" class="form-control" name="email" id="email" placeholder="email" value="<?php 

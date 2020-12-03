@@ -46,10 +46,10 @@
                         setcookie('email', $user['email'], $hour,$path);
                         setcookie('active', 1, $hour,$path);          
                     }
-                    header('Location:/user/dashboard');
+                    header('Location:'.BASE.'user/dashboard');
                 }
                 else{
-                    header('Location:/user/login');
+                    header('Location:'.BASE.'user/login');
                 }
             
             }
