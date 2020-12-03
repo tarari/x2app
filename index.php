@@ -4,8 +4,13 @@
    
 
     require __DIR__.'/vendor/autoload.php';
-    define('BASE',
-    (dirname($_SERVER['SCRIPT_NAME'])).'/');
+
+    $base=dirname($_SERVER['PHP_SELF']).'/';
+    if ($base=='//'){
+        $base='/';
+    }
+    
+    define('BASE',$base);
     
     use App\App;
    
