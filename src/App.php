@@ -9,6 +9,29 @@ namespace App;
         static protected $action;
         static protected $req;
 
+        private static function env(){
+            $ipAddress=gethostbyname($_SERVER['SERVER_NAME']);
+            if($ipAddress=='127.0.0.1'){
+                return 'dev';
+            }else{
+                return 'pro';
+            }
+        }
+        private static function loadConf(){
+            $file="config.json";
+            $jsonStr=file_get_contents($file);
+            $arrayJson=json_decode($jsonStr);
+            return $arrayJson;
+        }
+        static function init(){
+            //read configuration
+            $config=self::loadConf();
+            //determinar env pro o dev
+            $strconf='conf_'.self::env();   
+            $conf=(array)$config->$strconf;
+            return $conf;
+
+        }
         public static function run(){
 
             $session=new Session();

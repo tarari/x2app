@@ -1,17 +1,19 @@
 {
-    "dbconf_dev":{
+    "conf_dev":{
         "driver":"mysql",
         "dbhost":"127.0.0.1",
         "dbname":"prouf1",
         "dbuser":"prouf1",
-        "dbpass":"linuxlinux"
+        "dbpass":"linuxlinux",
+        "web":"http://localhost:8000/"
     },
-    "dbconf_pro":{
+    "conf_pro":{
         "driver":"mysql",
         "dbhost":"toni.cesnuria.com",
         "dbname":"toni_prouf1",
-        "dbuser":"",
-        "dbpass":""
+        "dbuser":"toni_prouf1",
+        "dbpass":"linuxlinux",
+        "web":"https://toni.cesnuria.com/m7/todofw/"
 
     }
 }

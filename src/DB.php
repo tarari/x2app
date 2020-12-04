@@ -17,7 +17,7 @@
             $config=$this->loadConf();
         
             //determinar env pro o dev
-            $strdbconf='dbconf_'.$this->env();
+            $strdbconf='conf_'.$this->env();
             
             $dbconf=(array)$config->$strdbconf;
             
@@ -62,7 +62,7 @@
                         $stmt=self::$instance->prepare($sql);
     
                         $stmt->execute($values);
-                    }catch(PDOException $e){
+                    }catch(\PDOException $e){
                         echo $e->getMessage();
                         return false;
                     }
