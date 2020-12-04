@@ -36,7 +36,7 @@ namespace App;
 
             $session=new Session();
             $routes=self::getRoutes();
-            var_dump($routes);
+           
             
             // obtener tres parámetros: controlador, accion,[parametros]
             // url friendly :  http://app/controlador/accion/param1/valor1/param2/valor2
@@ -45,8 +45,7 @@ namespace App;
             
         
             self::$action=self::$req->getAction();
-            var_dump(self::$req);
-            die;
+            
             self::dispatch($controller,$routes,$session);
 
         }
