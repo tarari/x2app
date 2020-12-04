@@ -13,13 +13,17 @@
 
         function __construct(){
             $requestString=\htmlentities($_SERVER['REQUEST_URI']);
+            echo $this->get_diff(URI,$requestString); 
+            die;
             //extract URI
             $this->arrURI=explode('/',$requestString);
             
             array_shift($this->arrURI);
             $this->extractURI();
         }
-        
+        private function get_diff($old, $new){
+           return str_replace($old,'',$new);
+        }
         private function extractURI():void{
             
            
