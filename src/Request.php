@@ -10,19 +10,32 @@
         private  $params;
 
         protected $arrURI;
-
+        
         function __construct(){
             $requestString=\htmlentities($_SERVER['REQUEST_URI']);
-            echo $this->get_diff(URI,$requestString); 
-            die;
+            //
+           
             //extract URI
             $this->arrURI=explode('/',$requestString);
             
             array_shift($this->arrURI);
             $this->extractURI();
         }
-        private function get_diff($old, $new){
-           return str_replace($old,'',$new);
+        private function get_diff($a, $b){
+            if (strlen($a)!=strlen($b)){
+                if (strlen($a)>strlen($b)){
+                    for($i=0;$i<strlen($a);$i++){
+                        if($a[$i]!=$b[$i]){
+                            $c[$i]=$a[$i];
+                        }
+                    }
+                }
+            }else{
+                $c="iguals";
+            }
+            return $c;
+           
+           
         }
         private function extractURI():void{
             

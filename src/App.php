@@ -45,8 +45,7 @@ namespace App;
             
         
             self::$action=self::$req->getAction();
-            var_dump(self::$req);
-            die;
+            
             self::dispatch($controller,$routes,$session);
 
         }
