@@ -14,6 +14,7 @@
         function __construct(){
             $requestString=\htmlentities($_SERVER['REQUEST_URI']);
             print($requestString.' ');
+            print(ROOT.' ');
             $reqStr=$this->get_diff($requestString,ROOT);
             print($reqStr.' ');
             //extract URI
