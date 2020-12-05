@@ -14,7 +14,7 @@
         "dbname":"toni_prouf1",
         "dbuser":"toni_prouf1",
         "dbpass":"linuxlinux",
-        "web":"https://toni.cesnuria.com/m7/todofw/",
+        "web":"/m7/todofw/",
         "root":"/m7/todofw/"
 
     }

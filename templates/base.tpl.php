@@ -30,7 +30,7 @@
       <h3 class="masthead-brand">Td-list</h3>
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link active" href="<?=BASE;?>">Home</a>
-        <a class="nav-link" href="/user/login">Login</a>
+        <a class="nav-link" href="<?=BASE;?>user/login">Login</a>
         <a class="nav-link" href="<?=BASE;?>index/contact">Contact</a>
       </nav>
     </div>
