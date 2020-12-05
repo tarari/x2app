@@ -5,7 +5,8 @@
         "dbname":"prouf1",
         "dbuser":"prouf1",
         "dbpass":"linuxlinux",
-        "web":"http://localhost:8000/"
+        "web":"http://localhost:8000/",
+        "root":"/todofw/"
     },
     "conf_pro":{
         "driver":"mysql",
@@ -13,7 +14,8 @@
         "dbname":"toni_prouf1",
         "dbuser":"toni_prouf1",
         "dbpass":"linuxlinux",
-        "web":"https://toni.cesnuria.com/m7/todofw/"
+        "web":"https://toni.cesnuria.com/m7/todofw/",
+        "root":"/m7/todo/"
 
     }
 }

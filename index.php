@@ -10,6 +10,7 @@
     define('URI',$uri);
     $conf=App::init();
     define('BASE',$conf['web']);
+    define('ROOT',$conf['root']);
    
 
     App::run();

@@ -13,33 +13,22 @@
         
         function __construct(){
             $requestString=\htmlentities($_SERVER['REQUEST_URI']);
-            //
-           
-            //extract URI
-            $this->arrURI=explode('/',$requestString);
+            $reqStr=$this->get_diff($requestString,ROOT);
             
-            array_shift($this->arrURI);
+            //extract URI
+            $this->arrURI=explode('/',$reqStr);
+            var_dump($this->arrURI);
+            die;
+            //array_shift($this->arrURI);
             $this->extractURI();
         }
         private function get_diff($a, $b){
-            if (strlen($a)!=strlen($b)){
-                if (strlen($a)>strlen($b)){
-                    for($i=0;$i<strlen($a);$i++){
-                        if($a[$i]!=$b[$i]){
-                            $c[$i]=$a[$i];
-                        }
-                    }
-                }
-            }else{
-                $c="iguals";
-            }
-            return $c;
-           
-           
+            $c=substr($a,strlen($b));
+            return $c;  
         }
+
         private function extractURI():void{
-            
-           
+              
             $length=count($this->arrURI);
             
             switch($length){
