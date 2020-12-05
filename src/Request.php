@@ -20,7 +20,7 @@
             //extract URI
             $this->arrURI=explode('/',$reqStr);
             var_dump($this->arrURI);
-            die;
+            
             //array_shift($this->arrURI);
             $this->extractURI();
         }
