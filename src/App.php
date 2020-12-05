@@ -45,7 +45,7 @@ namespace App;
             
         
             self::$action=self::$req->getAction();
-            
+            die(self::$req->getController());
             self::dispatch($controller,$routes,$session);
 
         }
