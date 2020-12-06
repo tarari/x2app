@@ -4,8 +4,7 @@
 
     class Request{
         private  $controller;
-        private   $action;
-    
+        private  $action;
         private $method;
         private  $params;
 
@@ -13,25 +12,22 @@
         
         function __construct(){
             $requestString=\htmlentities($_SERVER['REQUEST_URI']);
-           
-            $reqStr=$this->get_diff($requestString,ROOT);
-            
+            //adaptar el sistema root a domini o carpeta
+            $reqStr=$this->get_diff($requestString,ROOT);  
             //extract URI
             $this->arrURI=explode('/',$reqStr);
            
-            
-            //array_shift($this->arrURI);
             $this->extractURI();
         }
+
         private function get_diff($a, $b){
             $c=substr($a,strlen($b));
             return $c;  
         }
 
-        private function extractURI():void{
-              
+        private function extractURI():void{     
             $length=count($this->arrURI);
-            
+            //estudi de casos possibles
             switch($length){
                 case 1: //only controller
                     if($this->arrURI[0]==""){

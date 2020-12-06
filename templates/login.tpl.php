@@ -7,7 +7,7 @@
     <div class="d-flex justify-content-center h-100">   
     <div class="card">
     <div class="card-header">Sign in:</div>
-    <div class="card-body"></div>
+    <div class="card-body">
     <form class="form" method="POST" action="<?= BASE;?>user/log">  
         <div class="input-group form-group">
         <label for="email">Email:

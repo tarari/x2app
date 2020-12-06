@@ -1,35 +1,46 @@
 <?php
 
-    include 'src/templates/header.tpl.php';
+    include 'header.tpl.php';
     
     ?>
 
-    <main>
-    
-    
-    <form class="form" method="POST" action="?url=regaction">
-    <legend>
-        <p>Sign up please...</p>
-        <div class="form-row">
-        <input type="text" name="uname" placeholder="uname">
+    <main class="container">
+    <div class="d-flex justify-content-center h-100">   
+    <div class="card">
+    <div class="card-header">Sign up:</div>
+    <div class="card-body">
+    <form class="form" method="POST" action="<?= BASE;?>user/reg">  
+        <div class="input-group form-group">
+        <label for="uname">Username:
+            <input type="text" class="form-control" name="uname" placeholder="uname">
         </div>
-        <div class="form-row">
-        <input type="text" name="email" placeholder="email">
+        <div class="input-group form-group">
+        <label for="email">Email:
+            <input type="text" class="form-control" name="email" id="email" placeholder="email"></label>
         </div>
-        <div class="form-row">
-        <input type="password" name="passw" placeholder="Password">
+        <div class="input-group form-group">
+        <label for="passw">Password:
+            <input type="password"  class="form-control" id="passw" name="passw" placeholder="Password">
+            </label>
         </div>
-        <div class="form-row">
-        <input type="password" name="passw2" placeholder="Repeat password">
+        <div class="input-group form-group">
+        <label for="passw2">Repeat Password:
+            <input type="password"  class="form-control" id="passw2" name="passw" placeholder="Password">
+        </label>
         </div>
-        <div class="form-row">
-        <button class="but-login" type="submit">Register</button>
+
+        <div class="form-group">
+            <button  class="btn btn-primary" type="submit">Register</button>
         </div>
-        
-        </legend>
+
     </form>
+    </div> 
+    
+    </div>
+    
+   
     </main>
 
     <?php
-    include 'src/templates/footer.tpl.php';
+    include 'footer.tpl.php';
     ?>

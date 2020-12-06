@@ -40,6 +40,11 @@
         public function set($key, $value) {
             $_SESSION[$key] = $value;
         }
+        public function unset($key){
+            if ($this->exists($key)){
+                unset($_SESSION[$key]);
+            }
+        }
     
         /**
          * Deletes a session element.
@@ -65,6 +70,10 @@
          */
         public function exists($key) {
             return array_key_exists($key, $_SESSION);
+        }
+
+        public function destroy(){
+            session_destroy();
         }
     
     }

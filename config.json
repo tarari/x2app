@@ -6,7 +6,7 @@
         "dbuser":"prouf1",
         "dbpass":"linuxlinux",
         "web":"http://localhost:8000/",
-        "root":"/todofw/"
+        "root":"/"
     },
     "conf_pro":{
         "driver":"mysql",

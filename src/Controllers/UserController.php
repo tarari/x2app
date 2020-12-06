@@ -55,6 +55,35 @@
             }
         }
         
+        public function reg(){
+
+            if(isset($_POST['email'])&&!empty($_POST['email'])&&
+            isset($_POST['uname'])&&!empty($_POST['uname'])&&
+            isset($_POST['passw'])&&!empty($_POST['passw']))
+            {
+                $email=filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
+                $passw=filter_input(INPUT_POST,'passw',FILTER_SANITIZE_STRING);
+                $passw2=filter_input(INPUT_POST,'passw2',FILTER_SANITIZE_STRING);
+                $uname=filter_input(INPUT_POST,'uname',FILTER_SANITIZE_STRING);
+                if ($passw===$passw2){
+                    
+                    $passw=password_hash($passw,PASSWORD_BCRYPT,['cost'=>4]);
+                    $data=[
+                        'email'=>$email,
+                        'uname'=>$uname,
+                        'passw'=>$passw,
+                        'role'=>2
+                    ];
+                    // insert en db
+                    if ($this->getDB()->insert('users',$data)){
+                        header('Location:'.BASE);
+                    }
+                
+                }
+            }else{
+                header('Location:'.BASE.'user/register');
+            }
+        }
 
         private function auth($email,$pass)
         {
@@ -80,5 +109,8 @@
             }catch(\PDOException $e){
                 return false;
             }
+        }
+        public function register(){
+            $this->render(null,'register');
         }
     }
