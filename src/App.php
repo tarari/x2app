@@ -55,9 +55,7 @@ namespace App;
             
             try{
                 if(in_array($controller,$routes)){
-                   // nombre del controlador
-                   // instancia del controlador
-                   // llamada a la función accion
+                   // si es ruta de sistema es pot instanciar
                    // dispatcher
                    $nameController='\\App\Controllers\\'.ucfirst($controller).'Controller';
                    $objContr=new $nameController(self::$req,$session);

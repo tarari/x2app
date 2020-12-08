@@ -12,13 +12,10 @@
             parent::__construct($request,$session);
         }
        
-        //url = user/login
+       //funcions de render
         function login(){
-            $this->render(null,'login');
-        }
-        function logout(){
-            session_destroy();
-            header('Location:/');
+            $user=$this->session->get('user');
+            $this->render(['user'=>$user],'login');
         }
         function dashboard(){
             
@@ -26,6 +23,21 @@
             $data=$this->getDB()->selectAllWithJoin('tasks','users',['tasks.id','tasks.description','tasks.due_date'],'user','id');
             $this->render(['user'=>$user,'data'=>$data],'dashboard');
         }
+        public function register(){
+            $user=$this->session->get('user');
+            $this->render(['user'=>$user],'register');
+        }
+        public function profile(){
+            $user=$this->session->get('user');
+            $this->render(['user'=>$user],'profile');            
+
+        }
+        // funcions post -render
+        function logout(){
+            session_destroy();
+            header('Location:/');
+        }
+        
 
         function log(){
             if (isset($_POST['email'])&&!empty($_POST['email'])
@@ -56,11 +68,13 @@
         }
         
         public function reg(){
+           
 
             if(isset($_POST['email'])&&!empty($_POST['email'])&&
             isset($_POST['uname'])&&!empty($_POST['uname'])&&
             isset($_POST['passw'])&&!empty($_POST['passw']))
             {
+                
                 $email=filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
                 $passw=filter_input(INPUT_POST,'passw',FILTER_SANITIZE_STRING);
                 $passw2=filter_input(INPUT_POST,'passw2',FILTER_SANITIZE_STRING);
@@ -74,6 +88,7 @@
                         'passw'=>$passw,
                         'role'=>2
                     ];
+                    
                     // insert en db
                     if ($this->getDB()->insert('users',$data)){
                         header('Location:'.BASE);
@@ -84,7 +99,13 @@
                 header('Location:'.BASE.'user/register');
             }
         }
-
+        /**
+         * Auth function
+         *
+         * @param [string] $email
+         * @param [string] $pass
+         * @return void
+         */
         private function auth($email,$pass)
         {
             try{   
@@ -110,7 +131,5 @@
                 return false;
             }
         }
-        public function register(){
-            $this->render(null,'register');
-        }
+       
     }

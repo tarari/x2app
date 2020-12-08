@@ -1,15 +1,19 @@
 <?php
- include 'src/templates/header.tpl.php';
+ include 'header.tpl.php';
  ?>
- <main>
-   <section class="profile">
-    <h1>Username: <?= $data['uname']; ?></h1>
-    <h3>Email:<?= $data['email']; ?></h3>
-   </section>
-   <button>Change</button>
+ <main class="container">
 
-    <a href="?url=dashboard">Back</a>
+ <?php if($user){ ?>
+   <section class="my-auto">
+    <h1>Username: <?= $user['uname']; ?></h1>
+    <h3>Email:<?= $user['email']; ?></h3>
+   </section>
+   <button class="btn btn-secondary">Change</button>
+    <a href="<?=BASE;?>user/dashboard">Back</a>
+    <?php }else{ header("Location:".BASE);}
+    ?>
+
+ 
  </main>
  <?php
-    include 'src/templates/footer.tpl.php';
-    ?>
+    include 'footer.tpl.php';

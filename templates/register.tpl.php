@@ -25,7 +25,7 @@
         </div>
         <div class="input-group form-group">
         <label for="passw2">Repeat Password:
-            <input type="password"  class="form-control" id="passw2" name="passw" placeholder="Password">
+            <input type="password"  class="form-control" id="passw2" name="passw2" placeholder="Password">
         </label>
         </div>
 

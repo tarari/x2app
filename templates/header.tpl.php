@@ -14,9 +14,9 @@
       <nav class="nav nav-masthead justify-content-center">
         <a class="nav-link active" href="<?= BASE;?>">Home</a>
         <?php 
-                if (isset($_SESSION['user']['email'])){
+                if ($user){
                    echo '<a class="nav-link" href="'.BASE.'user/logout">Logout</a></li>';
-                   echo '<a class="nav-link" href="'.BASE.'user/profile">'.$_SESSION['user']['uname'].'</a></li>';
+                   echo '<a class="nav-link" href="'.BASE.'user/profile">'.$user['uname'].'</a></li>';
                 }
                 else{
                     echo '<a class="nav-link" href="'.BASE.'user/login">Login</a></li>';
