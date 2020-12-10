@@ -1,7 +1,25 @@
-        function remove(id){
-            var row=getRow(id);
-            alert(row['description']);    
+function remove(id){
+    //var data=Object.assign({}, getRow(id));
+    //var dataString=JSON.stringify(data);
+
+    URL=window.location.origin+'/task/remove';
+    console.log(id);
+    $.ajax({
+        type: 'POST',
+        url: URL,
+        data: {'id':id},
+        error: function(){
+            alert('Error');},
+        success: function(resp){
+            console.log(resp);
+            
+        },
+        complete: function(data){
+            window.location.reload();
+            show_mesg('Removed');
         }
+    });
+}
         function getRow(id){   
             cells= document.getElementById('row'+id).cells;
             console.log(cells);

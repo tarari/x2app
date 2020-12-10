@@ -5,7 +5,7 @@
         "dbname":"prouf1",
         "dbuser":"prouf1",
         "dbpass":"linuxlinux",
-        "web":"http://localhost:8000/",
+        "web":"/",
         "root":"/"
     },
     "conf_pro":{

@@ -41,4 +41,9 @@
             $this->render(['user'=>$user],'edittask');
         
         }
+        public function remove(){
+            $id=$_POST['id'];
+            $user=$this->session->get('user');
+            $this->getDB()->remove('tasks',$id);
+        }
     }
