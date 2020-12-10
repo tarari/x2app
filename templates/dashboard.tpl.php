@@ -1,10 +1,11 @@
 <?php
     include 'header.tpl.php';
     ?>
-    <main>
-    <section class="container">
+     <?php if(isset($user)){ ?>
+    <main class="container">
+    <section>
         <h3>Todo list <?= $user['uname'];?></h3>
-        <div class="row my-auto">
+        <div class="col my-auto">
         <table id="mytable" class="table">
             <tr>
             <?php
@@ -37,13 +38,16 @@
         </div>
         </section>
         <section>
-        <a href="/task/new"><button class="btn btn-secondary"><strong>+</strong></button></a>
+        <a href="<?=BASE;?>task/new"><button class="btn btn-secondary"><strong>+</strong></button></a>
         </section>
         <section>
             <div id="message"><p></p></div>
         </section>
         
     </main>
+    <?php }else{ header("Location:".BASE);}
+    ?>
+
     
 <?php
     include 'footer.tpl.php';

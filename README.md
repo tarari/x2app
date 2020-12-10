@@ -1,4 +1,7 @@
-# La navegación en la app:
+# Aplicació basada en framework xapp
+Es tracta d'una app basa en un framework MVC i OOP en PHP
+
+# La navegació en l'app:
 ```
 welcome --> login  ----> dashboard ---> add task
         --> register               ---> complete task

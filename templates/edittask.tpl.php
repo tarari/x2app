@@ -1,8 +1,8 @@
 <?php
-    include  'header.tpl.php';
-
+    include 'header.tpl.php';
     ?>
-    <main>
+
+<main>
     <div class="container">   
         <div class="my-auto">
             <div class="card">
@@ -32,7 +32,5 @@
     </div> 
     </div>
     </main>
-
     <?php
-
         include 'footer.tpl.php';

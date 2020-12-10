@@ -17,8 +17,8 @@
             // uso de funciones declaradas en el modelo 
             // y definidas en la clase abstracta
             // $stmt=$this->query($db,"SELECT * FROM users ",null);
-            
-            $dataview=[ 'title'=>'Todo',
+            $user=$this->session->get('user');
+            $dataview=[ 'title'=>'Todo','user'=>$user,
                          'data'=>$data];
             $this->render($dataview);
         }

@@ -19,17 +19,26 @@
         }
 
         public function new(){
-            $this->render(null,'newtask');
+            $user=$this->session->get('user');
+            $this->render(['user'=>$user],'newtask');
         }
+
         public function add(){
             $description=filter_input(INPUT_POST,'description',FILTER_SANITIZE_STRING);
             $datetime=filter_input(INPUT_POST,'due_date',FILTER_SANITIZE_SPECIAL_CHARS);
             $id=$this->session->get('user')['id'];
             $db=$this->getDB();
             if($db->insert('tasks',['description'=>$description,'user'=>$id,'due_date'=>$datetime])){
-                header('Location:/user/dashboard');
+                header('Location:'.BASE.'user/dashboard');
             }else{
-                header('Location:/task/new');
+                header('Location:'.BASE.'task/new');
             }
+        }
+        public function edit($id){
+            $user=$this->session->get('user');
+            $task=$this->getDB()->selectWhereWithJoin('tasks','users',
+                ['tasks.description'],'tasks.user','users.id',['tasks.id'=>$id]);
+            $this->render(['user'=>$user],'edittask');
+        
         }
     }
