@@ -41,7 +41,12 @@
             $this->render(['user'=>$user],'edittask');
         
         }
+        public function update($id){
+
+        }
+        
         public function remove(){
+            //recollim dades passades per ajax
             $id=$_POST['id'];
             $user=$this->session->get('user');
             $this->getDB()->remove('tasks',$id);

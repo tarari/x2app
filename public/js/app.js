@@ -1,3 +1,9 @@
+var show_mesg=function(str){
+    $('#message').show();
+    $('#message').html('<p>'+str+'</p>');
+    setTimeout(function(){$('#message').hide();},10000);
+    };
+    
 function remove(id){
     //var data=Object.assign({}, getRow(id));
     //var dataString=JSON.stringify(data);
@@ -31,10 +37,27 @@ function remove(id){
             return arr;
             
         }
-       /* function edit(id){
-            var row=<?= json_encode($row);?>;
-            alert(row['description']);
-        }*/
+      
+        function edit(id){
+            var data=Object.assign({}, getRow(id));
+            var dataString=JSON.stringify(data);
+            URL=window.location.origin+'/task/update/id/'+id;
+            console.log(dataString);
+            $.ajax({
+                type: 'POST',
+                url: URL,
+                data: {data:dataString},
+                error: function(){
+                    alert('Error');},
+                success: function(resp){
+                    console.log(resp);
+                    
+                },
+                complete: function(data){
+                    show_mesg('Updated');
+                }
+            });
+        }
     $(document).ready(function(){
         $('.edit').click(function(e){
             console.log(e);

@@ -17,10 +17,15 @@
             $user=$this->session->get('user');
             $this->render(['user'=>$user],'login');
         }
-        function dashboard(){
-            
+        /**
+         * renders user's dashboard
+         *
+         * @return void
+         */
+        function dashboard(){  
             $user=$this->session->get('user');
-            $data=$this->getDB()->selectAllWithJoin('tasks','users',['tasks.id','tasks.description','tasks.due_date'],'user','id');
+            $data=$this->getDB()->selectWhereWithJoin('tasks','users',['tasks.id','tasks.description',
+    'tasks.due_date'],'user','id',['users.uname',$user['uname']]);
             $this->render(['user'=>$user,'data'=>$data],'dashboard');
         }
         public function register(){
