@@ -113,11 +113,12 @@
                     $values=array_values($data);
                     $changes="";
                     for($i=0;$i<count($keys);$i++){
-                        $changes.=$keys[$i].'='.$values[$i].',';
+                        $changes.=$keys[$i]."='".$values[$i]."',";
                     }
                     $changes=substr($changes,0,-1);
                     $cond="{$conditions[0]}='{$conditions[1]}'";
                     $sql="UPDATE {$table} SET {$changes} WHERE {$cond}";
+                    
                     $stmt=self::$instance->prepare($sql);
                     $res=$stmt->execute();
                     if($res){

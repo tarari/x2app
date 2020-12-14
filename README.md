@@ -1,7 +1,11 @@
 # Aplicació basada en framework xapp
+
 Es tracta d'una app basa en un framework MVC i OOP en PHP
+
 ## Estructura
+
 Estructura de carpetes i fitxers
+
 ```
 /index.php
  config.json
@@ -20,7 +24,8 @@ La carpeta vendor/ inclou únicament la característica autoload de PSR-4.
 templates/ incorpora totes les plantilles php-html que s'utilitzen a les vistes.
 public/ incorpora les característiques estàtiques i de front-end de l'aplicació.
 
-## La navegació en l'app:
+## La navegació en l'app
+
 ```
 welcome --> login  ----> dashboard ---> add task
         --> register               ---> complete task
@@ -30,9 +35,11 @@ welcome --> login  ----> dashboard ---> add task
 Controllers:  USERCONTROLLER          USER/TASKCONTROLLER
 
 ```
+
 ## Iniciar l'aplicació
 
 Cal exportar l'SQL de la base dades de l'aplicació:
+
 ```
 php start.php fitxer.sql
 ```

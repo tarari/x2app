@@ -24,7 +24,7 @@
                     echo '<a class="nav-link" href="'.BASE.'user/register">Register</a></li>';
                 }
         ?>
-        <a class="nav-link" href="<?= BASE;?>index/contact">Contact</a>
+        <a class="nav-link" href="#">Contact</a>
       </nav>
     
   </header>

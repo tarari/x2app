@@ -41,8 +41,15 @@
             $this->render(['user'=>$user],'edittask');
         
         }
-        public function update($id){
-
+        public function update(){
+            $data =(array) json_decode(stripslashes($_POST['data']));
+            
+            try{
+                $res=$this->getDB()->update('tasks',$data,['id',$data['id']]);
+            }catch(\Exception $e){
+                return ($e->getMessage());
+            }
+           return $res;
         }
         
         public function remove(){

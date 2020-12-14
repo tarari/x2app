@@ -41,11 +41,14 @@
         <a href="<?=BASE;?>task/new"><button class="btn btn-secondary"><strong>+</strong></button></a>
         </section>
         <section>
+        <br>
+        <div class="my-auto">
         <div id="message" class="alert alert-warning" role="alert">
 
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
+        </div>
         </div>
         </section>
         
