@@ -8,7 +8,7 @@ function remove(id){
     //var data=Object.assign({}, getRow(id));
     //var dataString=JSON.stringify(data);
 
-    URL=window.location.origin+'/task/remove';
+    URL=window.location.origin+App.url.base+'task/remove';
     console.log(id);
     $.ajax({
         type: 'POST',
@@ -41,7 +41,7 @@ function getRow(id){
         function edit(id){
             var data=Object.assign({}, getRow(id));
             var dataString=JSON.stringify(data);
-            URL=window.location.origin+'/task/update';
+            URL=window.location.origin+App.url.base+'task/update';
             console.log(dataString);
             $.ajax({
                 type: 'POST',

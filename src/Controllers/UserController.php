@@ -40,7 +40,7 @@
         // funcions post -render
         function logout(){
             session_destroy();
-            header('Location:/');
+            header('Location:BASE');
         }
         
 
