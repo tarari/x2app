@@ -2,20 +2,20 @@
     "conf_dev":{
         "driver":"mysql",
         "dbhost":"127.0.0.1",
-        "dbname":"prouf1",
-        "dbuser":"prouf1",
-        "dbpass":"linuxlinux",
+        "dbname":"dbname",
+        "dbuser":"dbuser",
+        "dbpass":"+++++++",
         "web":"/",
         "root":"/"
     },
     "conf_pro":{
         "driver":"mysql",
-        "dbhost":"toni.cesnuria.com",
-        "dbname":"toni_prouf1",
-        "dbuser":"toni_prouf1",
-        "dbpass":"linuxlinux",
-        "web":"/m7/todofw/",
-        "root":"/m7/todofw/"
+        "dbhost":"dns or IP",
+        "dbname":"remmote dbname",
+        "dbuser":"remote dbuser",
+        "dbpass":"+++++++",
+        "web":"/remote_path/",
+        "root":"/remote_path/"
 
     }
 }
