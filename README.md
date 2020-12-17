@@ -1,4 +1,4 @@
-# Aplicació basada en framework xapp
+# Aplicació basada en framework x2app
 
 Es tracta d'una app basa en un framework MVC i OOP en PHP
 
@@ -24,7 +24,7 @@ La carpeta vendor/ inclou únicament la característica autoload de PSR-4.
 templates/ incorpora totes les plantilles php-html que s'utilitzen a les vistes.
 public/ incorpora les característiques estàtiques i de front-end de l'aplicació.
 
-## La navegació en l'app
+## La navegació en l'app (Exemple)
 
 ```
 welcome --> login  ----> dashboard ---> add task
@@ -43,3 +43,10 @@ Cal exportar l'SQL de la base dades de l'aplicació:
 ```
 php start.php fitxer.sql
 ```
+
+Cal instal·lar dependències
+
+```
+composer update
+```
+
